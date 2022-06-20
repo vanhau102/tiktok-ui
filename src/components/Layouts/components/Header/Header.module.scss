@@ -1,4 +1,5 @@
 .wrapper {
+    --search-border-radius: 92px;
     width: 100%;
     height: var(--default-layout-height, 60px);
     display: flex;
@@ -8,4 +9,43 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+}
+.search {
+    width: 361px;
+    height: 46px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-radius);
+    padding-left: 16px;
+    display: flex;
+    input {
+        flex: 1;
+        color: var(--black);
+        height: 100%;
+        font-size: 1.6rem;
+        background-color: transparent;
+    }
+}
+.clear {
+}
+.loading {
+}
+.search-btn {
+    height: 100%;
+    width: 52px;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+    &:hover {
+        cursor: pointer;
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.actions {
 }
