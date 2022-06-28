@@ -16,6 +16,21 @@ const MENU_ITEMS = [
 	{
 		icon: <FontAwesomeIcon icon={faEarthAsia} />,
 		title: 'English',
+		children: {
+			title: 'Language',
+			data: [
+				{
+					type: 'language',
+					code: 'en',
+					title: 'English',
+				},
+				{
+					type: 'language',
+					code: 'vn',
+					title: 'Tiếng Việt',
+				},
+			]
+		},
 	},
 	{
 		icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -36,6 +51,19 @@ function Header() {
 			setSearchResult([])
 		}, 3000)
 	})
+
+	//Handle logic
+	const hadleMauChange = (menuItem) => {
+		switch (menuItem.type) {
+			case 'language':
+
+				break;
+
+			default:
+				break;
+		}
+
+	}
 
 	return <header className={cx("wrapper")}>
 		<div className={cx("inner")}>
@@ -74,8 +102,9 @@ function Header() {
 				<Button primary >Log in</Button>
 				<Menu
 					items={MENU_ITEMS}
+					onChange={hadleMauChange}
 				>
-					<button className={cx('more-btn')}>
+					<button className={cx('more-btn')} >
 						<FontAwesomeIcon icon={faEllipsisVertical} />
 					</button>
 				</Menu>
