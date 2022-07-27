@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
@@ -8,8 +9,6 @@ const cx = classNames.bind(styles);
 
 
 function Header({ title, onBack }) {
-
-
     return (
         <header className={cx('header')}>
             <button className={cx('back-btn')} onClick={onBack}>
@@ -20,6 +19,11 @@ function Header({ title, onBack }) {
             </h4>
         </header>
     );
+}
+
+Header.propTypes = {
+    title: PropTypes.string.isRequired,
+    onBack: PropTypes.func.isRequired,
 }
 
 export default Header;
